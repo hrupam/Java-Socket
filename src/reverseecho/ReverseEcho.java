@@ -26,7 +26,7 @@ public class ReverseEcho {
         System.out.println("Server Established on port 2000");
 
         Socket stk = ss.accept();
-        System.out.println("Accepting request from Client");
+        System.out.println("Client Connected");
 
         BufferedReader br = new BufferedReader(new InputStreamReader(stk.getInputStream()));
         PrintStream ps = new PrintStream(stk.getOutputStream());
@@ -44,8 +44,6 @@ public class ReverseEcho {
             ps.println(sb.toString());
             System.out.println("Reply sent to Client");
         } while (!message.equals("end"));
-
-        System.out.println("Server Disconected");
     }
 
 }
